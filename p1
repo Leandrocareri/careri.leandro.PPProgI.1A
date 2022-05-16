@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct{
+int id;
+char nombre[20];
+char tipo;
+float efectividad;
+}eVacuna;
+
+
+float aplicarAumento(float precio);
+int reemplazarCaracteres(char cadena[], int tam, char original, char cambio);
+int ordenarTipoyEfectividad(eVacuna lista[],int tam)
+
+int main()
+{
+    //funcion 1
+    float ingresado=100;
+    float total;
+    total=aplicarAumento(ingresado);
+    printf("%.2f\n",total);
+    system("pause");
+
+
+
+    //funcion 2
+    char nombre[20]={"LeandroLeo"};
+    int reemplazos;
+    printf("%s",nombre);
+    reemplazos=reemplazarCaracteres(nombre,20,'L','P');
+    printf("%s",nombre);
+    printf("Cantidad de letras reemplazadas: %d",reemplazos);
+    system("pause");
+
+
+
+/*Dada la siguiente estructura generar una función que permita ordenar un
+array de dicha estructura por tipo. Ante igualdad de tipo deberá ordenarse
+por efectividad creciente. Hardcodear datos y mostrarlos desde el main.*/
+    //funcion 3
+
+    eVacuna lista[3]={
+        {1,"pfizer","inyec",80;
+          2,"sputnik","inyec",85;
+          3,"astrazeneca","gotas",90};
+
+
+
+
+
+
+
+
+    return 0;
+}
+
+float aplicarAumento(float precio)
+{
+    float valorFinal;
+    int porcentajeAumento=5;
+    float aumento;
+    if(precio>=0)
+    {
+        aumento=(precio*porcentajeAumento)/100;
+        valorFinal=precio+aumento;
+    }
+    return valorFinal;
+}
+
+
+
+int reemplazarCaracteres(char cadena[], int tam, char original, char cambio)
+{
+    int cantidadReemplazos=0;
+    int largo=strlen(cadena);
+
+    if(cadena!=NULL && tam>0)
+    {
+        for(int i=0;i<largo;i++)
+        {
+            if(cadena[i]==original)
+            {
+                cadena[i]=cambio;
+                cantidadReemplazos++;
+            }
+        }
+    }
+    return cantidadReemplazos;
+}
